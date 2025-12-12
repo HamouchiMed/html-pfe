@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biographie - Talent Dakhla</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>Talent Dakhla</h1>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="art-page.html">Art</a></li>
+                    <li><a href="sport-page.html">Sport</a></li>
+                    <li><a href="tech-page.html">Tech</a></li>
+                    <li><a href="music-page.html">Musique</a></li>
+                    <li><a href="entrepreneurship-page.html">Entrepreneuriat</a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container" style="padding: 40px 20px;">
+        <div id="bioContainer"></div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Read id from query string and render biography
+        (function() {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id');
+            if (id) {
+                // Wait for DOMContentLoaded actions in script.js to run
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', function() {
+                        renderBiography(id);
+                    });
+                } else {
+                    renderBiography(id);
+                }
+            } else {
+                document.getElementById('bioContainer').innerHTML = '<p>Identifiant du talent manquant.</p>';
+            }
+        })();
+    </script>
+</body>
+</html>

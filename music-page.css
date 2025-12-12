@@ -1,0 +1,709 @@
+/* Import variables from main stylesheet */
+:root {
+    --primary-color: #FF6B6B;
+    --secondary-color: #4ECDC4;
+    --dark-color: #2D3436;
+    --light-color: #F5F6FA;
+    --accent-color: #FFE66D;
+    --bg-color: #fff;
+    --text-color: #333;
+    --card-bg: white;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --border-color: #ddd;
+}
+
+:root[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --card-bg: #2d2d2d;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+    --border-color: #444;
+    --light-color: #2d2d2d;
+}
+
+/* Music Page Specific Styles */
+
+.music-hero {
+    background: linear-gradient(135deg, #FF6B9D 0%, #C44569 50%, #FFA502 100%);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.music-hero .hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    animation: fadeInDown 0.8s ease;
+}
+
+.music-hero .hero-content p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    animation: fadeInUp 0.8s ease;
+}
+
+.music-container {
+    padding: 60px 0;
+}
+
+/* Music Intro Section */
+.music-intro {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    border-left: 5px solid #FF6B9D;
+}
+
+.music-intro h2 {
+    color: #FF6B9D;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.music-intro p {
+    color: var(--text-color);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* Music Events Section */
+.music-events {
+    margin-bottom: 60px;
+}
+
+.music-events h2 {
+    color: #2D3436;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #FF6B9D;
+}
+
+.event-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.event-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.event-header {
+    background: linear-gradient(135deg, #FF6B9D, #C44569);
+    color: white;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.event-header h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    flex: 1;
+}
+
+.event-badge {
+    background-color: #FFA502;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    margin-left: 15px;
+}
+
+.event-content {
+    padding: 30px;
+}
+
+.event-highlight {
+    background-color: #FFF0F5;
+    border-left: 4px solid #FF6B9D;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.05rem;
+}
+
+.event-content h4 {
+    color: #FF6B9D;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.event-content h4:first-of-type {
+    margin-top: 0;
+}
+
+.event-content p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.event-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.event-list li {
+    padding: 10px 0;
+    padding-left: 25px;
+    position: relative;
+    color: #555;
+    line-height: 1.6;
+}
+
+.event-list li:before {
+    content: "♪";
+    position: absolute;
+    left: 0;
+    color: #FF6B9D;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Fusion Section */
+.fusion-section {
+    margin-bottom: 60px;
+    padding: 40px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+
+.fusion-section h2 {
+    color: #2D3436;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.fusion-content {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.fusion-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #FF6B9D;
+}
+
+.fusion-card h3 {
+    color: #FF6B9D;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.fusion-card p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.fusion-card p strong {
+    color: #C44569;
+}
+
+.fusion-arrow {
+    font-size: 3rem;
+    color: #FF6B9D;
+    text-align: center;
+    font-weight: bold;
+}
+
+.fusion-result {
+    background: linear-gradient(135deg, #FF6B9D 0%, #FFA502 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.fusion-result h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.fusion-result p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.fusion-benefits h4 {
+    text-align: center;
+    color: #2D3436;
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.benefit {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #FF6B9D;
+    text-align: center;
+}
+
+.benefit h5 {
+    color: #FF6B9D;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.benefit p {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Scene Status */
+.scene-status {
+    margin-bottom: 60px;
+}
+
+.scene-status h2 {
+    color: #2D3436;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #FF6B9D;
+}
+
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.status-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.status-header {
+    padding: 20px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.status-card.positive .status-header {
+    background-color: #4CAF50;
+}
+
+.status-card.challenges .status-header {
+    background-color: #FF9800;
+}
+
+.status-list {
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+}
+
+.status-list li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.status-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+}
+
+.status-card.positive .status-list li:before {
+    color: #4CAF50;
+}
+
+.status-card.challenges .status-list li:before {
+    content: "⚠";
+    color: #FF9800;
+}
+
+.scene-insight {
+    background-color: #E3F2FD;
+    border-left: 4px solid #2196F3;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.scene-insight h4 {
+    color: #1976D2;
+    margin-bottom: 10px;
+}
+
+.scene-insight p {
+    color: #555;
+    line-height: 1.7;
+}
+
+/* Opportunities Section */
+.opportunities-section {
+    margin-bottom: 60px;
+}
+
+.opportunities-section h2 {
+    color: #2D3436;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #FF6B9D;
+}
+
+.opp-card-full {
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.opp-card-full:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.opp-header {
+    background: linear-gradient(135deg, #FF6B9D, #C44569);
+    color: white;
+    padding: 20px;
+}
+
+.opp-header h3 {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.opp-body {
+    padding: 25px;
+}
+
+.opp-body p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.opp-body p strong {
+    color: #FF6B9D;
+    font-weight: 600;
+}
+
+.opp-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.opp-features li {
+    padding: 10px 0;
+    padding-left: 25px;
+    position: relative;
+    color: #555;
+    line-height: 1.6;
+}
+
+.opp-features li:before {
+    content: "▪";
+    position: absolute;
+    left: 0;
+    color: #FF6B9D;
+    font-size: 1.2rem;
+}
+
+.opp-benefit {
+    background-color: #FFF0F5;
+    border-left: 4px solid #FF6B9D;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+/* Recommendations */
+.recommendations {
+    background: linear-gradient(135deg, #FFE5E5 0%, #FFD5B4 100%);
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.recommendations h3 {
+    color: #FF6B9D;
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+}
+
+.rec-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 4px solid #FF6B9D;
+}
+
+.rec-card:last-child {
+    margin-bottom: 0;
+}
+
+.rec-card h4 {
+    color: #FF6B9D;
+    margin-bottom: 10px;
+}
+
+.rec-card p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Planning Section */
+.planning-section {
+    margin-bottom: 60px;
+    padding: 40px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+
+.planning-section h2 {
+    color: #2D3436;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.tip-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    transition: all 0.3s;
+}
+
+.tip-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.tip-number {
+    background: linear-gradient(135deg, #FF6B9D, #C44569);
+    color: white;
+    width: 60px;
+    min-width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+.tip-content {
+    padding: 20px;
+    flex: 1;
+}
+
+.tip-content h4 {
+    color: #FF6B9D;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.tip-content p {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Music CTA Section */
+.music-cta {
+    text-align: center;
+    padding: 60px 40px;
+    background: linear-gradient(135deg, #FF6B9D, #C44569);
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.music-cta h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.music-cta p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-secondary {
+    background-color: white;
+    color: #FF6B9D;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background-color: transparent;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .music-hero .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .music-hero .hero-content p {
+        font-size: 1rem;
+    }
+
+    .event-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .event-header h3 {
+        margin-bottom: 15px;
+    }
+
+    .event-badge {
+        margin-left: 0;
+    }
+
+    .fusion-content {
+        grid-template-columns: 1fr;
+    }
+
+    .fusion-arrow {
+        transform: rotate(90deg);
+    }
+
+    .music-intro,
+    .planning-section,
+    .music-cta,
+    .recommendations {
+        padding: 25px;
+    }
+
+    .status-grid,
+    .benefits-grid,
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tip-card {
+        flex-direction: column;
+    }
+
+    .tip-number {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .music-hero {
+        padding: 40px 15px;
+        min-height: 300px;
+    }
+
+    .music-hero .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .music-intro h2,
+    .music-events h2,
+    .fusion-section h2,
+    .scene-status h2,
+    .opportunities-section h2,
+    .planning-section h2,
+    .music-cta h2 {
+        font-size: 1.5rem;
+    }
+
+    .event-header h3,
+    .opp-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .event-content,
+    .opp-body {
+        padding: 15px;
+    }
+
+    .tip-content {
+        padding: 15px;
+    }
+}

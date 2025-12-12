@@ -1,0 +1,655 @@
+/* Import variables from main stylesheet */
+:root {
+    --primary-color: #FF6B6B;
+    --secondary-color: #4ECDC4;
+    --dark-color: #2D3436;
+    --light-color: #F5F6FA;
+    --accent-color: #FFE66D;
+    --bg-color: #fff;
+    --text-color: #333;
+    --card-bg: white;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --border-color: #ddd;
+}
+
+:root[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --card-bg: #2d2d2d;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+    --border-color: #444;
+    --light-color: #2d2d2d;
+}
+
+/* Entrepreneurship Page Specific Styles */
+
+.entrepreneurship-hero {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 50%, #16a085 100%);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.entrepreneurship-hero .hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    animation: fadeInDown 0.8s ease;
+}
+
+.entrepreneurship-hero .hero-content p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    animation: fadeInUp 0.8s ease;
+}
+
+.entrepreneurship-container {
+    padding: 60px 0;
+}
+
+/* Entrepreneurship Intro Section */
+.entrepreneurship-intro {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    border-left: 5px solid #2ecc71;
+}
+
+.entrepreneurship-intro h2 {
+    color: #2ecc71;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.entrepreneurship-intro p {
+    color: var(--text-color);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* Sectors Section */
+.sectors-section {
+    margin-bottom: 60px;
+}
+
+.sectors-section h2 {
+    color: #2D3436;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #2ecc71;
+}
+
+.sector-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.sector-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.sector-header {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    color: white;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sector-header h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    flex: 1;
+}
+
+.sector-badge {
+    background-color: #16a085;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    margin-left: 15px;
+}
+
+.sector-content {
+    padding: 30px;
+}
+
+.sector-highlight {
+    background-color: #e8f8f5;
+    border-left: 4px solid #2ecc71;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.05rem;
+}
+
+.sector-content h4 {
+    color: #2ecc71;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.sector-content h4:first-of-type {
+    margin-top: 0;
+}
+
+.sector-content p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.sector-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.sector-list li {
+    padding: 10px 0;
+    padding-left: 25px;
+    position: relative;
+    color: #555;
+    line-height: 1.6;
+}
+
+.sector-list li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #2ecc71;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Advantages Section */
+.advantages-section {
+    margin-bottom: 60px;
+    padding: 40px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+
+.advantages-section h2 {
+    color: #2D3436;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.advantage-card {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.advantage-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.advantage-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.advantage-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* Support Section */
+.support-section {
+    margin-bottom: 60px;
+}
+
+.support-section h2 {
+    color: #2D3436;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #2ecc71;
+}
+
+.support-content {
+    margin-bottom: 30px;
+}
+
+.support-content > p {
+    color: #555;
+    text-align: center;
+    font-size: 1.05rem;
+    margin-bottom: 30px;
+}
+
+.support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.support-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #2ecc71;
+}
+
+.support-card h3 {
+    color: #2ecc71;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.support-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.support-card li {
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.support-card li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.support-note {
+    background-color: #e8f8f5;
+    border-left: 4px solid #2ecc71;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.support-note p {
+    color: #333;
+    line-height: 1.7;
+}
+
+/* Ideas Section */
+.ideas-section {
+    margin-bottom: 60px;
+}
+
+.ideas-section h2 {
+    color: #2D3436;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #2ecc71;
+}
+
+.ideas-intro {
+    text-align: center;
+    color: #555;
+    font-size: 1.05rem;
+    margin-bottom: 40px;
+}
+
+.idea-card {
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.idea-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.idea-header {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    color: white;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.idea-header h3 {
+    font-size: 1.4rem;
+    margin: 0;
+    flex: 1;
+}
+
+.idea-badge {
+    background-color: #16a085;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    margin-left: 15px;
+}
+
+.idea-content {
+    padding: 30px;
+}
+
+.idea-content h4 {
+    color: #2ecc71;
+    font-size: 1.15rem;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.idea-content h4:first-of-type {
+    margin-top: 0;
+}
+
+.idea-content p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.idea-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.idea-list li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.idea-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+/* Action Steps */
+.action-steps {
+    margin-bottom: 60px;
+    padding: 40px;
+    background: linear-gradient(135deg, #e8f8f5 0%, #d5f4e6 100%);
+    border-radius: 10px;
+}
+
+.action-steps h2 {
+    color: #2D3436;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.steps-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.step-item {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 20px;
+}
+
+.step-item:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.step-number {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.step-content h4 {
+    color: #2ecc71;
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
+
+.step-content p {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Takeaways Section */
+.takeaways-section {
+    margin-bottom: 60px;
+}
+
+.takeaways-section h2 {
+    color: #2D3436;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #2ecc71;
+}
+
+.takeaways-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.takeaway-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #2ecc71;
+}
+
+.takeaway-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.takeaway-card h3 {
+    color: #2ecc71;
+    font-size: 1.15rem;
+    margin-bottom: 15px;
+}
+
+.takeaway-card p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* CTA Section */
+.entrepreneurship-cta {
+    text-align: center;
+    padding: 60px 40px;
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.entrepreneurship-cta h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.entrepreneurship-cta p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-secondary {
+    background-color: white;
+    color: #2ecc71;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background-color: transparent;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .entrepreneurship-hero .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .entrepreneurship-hero .hero-content p {
+        font-size: 1rem;
+    }
+
+    .sector-header,
+    .idea-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sector-header h3,
+    .idea-header h3 {
+        margin-bottom: 15px;
+    }
+
+    .sector-badge,
+    .idea-badge {
+        margin-left: 0;
+    }
+
+    .entrepreneurship-intro,
+    .action-steps,
+    .entrepreneurship-cta {
+        padding: 25px;
+    }
+
+    .advantages-grid,
+    .support-grid,
+    .takeaways-grid,
+    .steps-timeline {
+        grid-template-columns: 1fr;
+    }
+
+    .step-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .step-number {
+        margin: 0 auto;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .entrepreneurship-hero {
+        padding: 40px 15px;
+        min-height: 300px;
+    }
+
+    .entrepreneurship-hero .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .entrepreneurship-intro h2,
+    .sectors-section h2,
+    .advantages-section h2,
+    .support-section h2,
+    .ideas-section h2,
+    .action-steps h2,
+    .takeaways-section h2,
+    .entrepreneurship-cta h2 {
+        font-size: 1.5rem;
+    }
+
+    .sector-header h3,
+    .idea-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .sector-content,
+    .idea-content {
+        padding: 15px;
+    }
+
+    .step-content {
+        padding: 0;
+    }
+}
