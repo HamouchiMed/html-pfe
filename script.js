@@ -5,7 +5,7 @@ const talents = [
         name: "YOUSSEF ES-SOUSY",
         category: "art",
         emoji: "🎨",
-        description: "Artiste peintre spécialisé en art traditionnel marocain",
+        description: "Youssef Es-Sousy est un artiste originaire de Dakhla, connu pour sa créativité et son engagement artistique. À travers son art, il met en valeur la culture locale et l'identité du Sud marocain.",
         details: "YOUSSEF crée des œuvres magnifiques inspirées par la culture locale de Dakhla. Il travaille avec diverses techniques et expose ses créations aux galeries internationales.",
         rating: "⭐⭐⭐⭐⭐"
     },
@@ -14,7 +14,7 @@ const talents = [
         name: "RACHID ROUSSAFI",
         category: "sport",
         emoji: "⚽",
-        description: "Championne de football féminin",
+        description: "Rachid Roussafi est un sportif spécialisé en kitesurf originaire de Dakhla. Il est reconnu pour son talent et sa maîtrise des conditions uniques de la lagune, et participe à la promotion des sports nautiques dans la région.",
         details: "Fatima a remporté plusieurs tournois régionaux et joue pour l'équipe nationale. Elle encourage les jeunes filles à suivre leur passion pour le sport.",
         rating: "⭐⭐⭐⭐⭐"
     },
