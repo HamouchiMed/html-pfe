@@ -23,7 +23,7 @@ const talents = [
         name: "Prof ZOUHAIR MAHANI",
         category: "tech",
         emoji: "💻",
-        description: "Développeur web et entrepreneur technologique",
+        description: "Le Professeur Zouhair Mahani est spécialisé en [ informatique, gestion, sciences, etc.]. Il est reconnu pour son expertise académique, son engagement dans l'enseignement et sa contribution au développement des compétences de ses étudiants.",
         details: "Le Professeur Zouhair Mahani est un éducateur et chercheur reconnu, apprécié pour son engagement envers l'enseignement et le développement académique. Il inspire ses étudiants par sa passion pour le savoir et encourage toujours l'excellence et la curiosité intellectuelle.",
         rating: "⭐⭐⭐⭐"
     },
