@@ -11,7 +11,7 @@ const talents = [
     },
     {
         id: 2,
-        name: "Fatima El-Bahya",
+        name: "RACHID ROUSSAFI",
         category: "sport",
         emoji: "⚽",
         description: "Championne de football féminin",
@@ -183,7 +183,7 @@ function createTalentCard(talent) {
     card.innerHTML = `
         ${imageContent}
         <div class="talent-info">
-            <span class="talent-category">${talent.emoji} ${getCategoryLabel(talent.category)}</span>
+            <span class="talent-category">${talent.category === 'art' ? '' : talent.emoji} ${getCategoryLabel(talent.category)}</span>
             <h3><a href="bio.html?id=${talent.id}">${talent.name}</a></h3>
             <p>${talent.description}</p>
             <div class="talent-rating">${talent.rating}</div>
