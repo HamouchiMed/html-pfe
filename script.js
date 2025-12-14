@@ -183,7 +183,7 @@ function createTalentCard(talent) {
     card.innerHTML = `
         ${imageContent}
         <div class="talent-info">
-            <span class="talent-category">${talent.category === 'art' ? '' : talent.emoji} ${getCategoryLabel(talent.category)}</span>
+            <span class="talent-category">${getCategoryLabel(talent.category)}</span>
             <h3><a href="bio.html?id=${talent.id}">${talent.name}</a></h3>
             <p>${talent.description}</p>
             <div class="talent-rating">${talent.rating}</div>
