@@ -169,9 +169,15 @@ function createTalentCard(talent) {
 
     // Use image for YOUSSEF ES-SOUSY (id 1), emoji for others
     const imageContent = talent.id === 1 
-        ? `<img src="assets/YOUSSEF ES-SOUSY.png" alt="${talent.name}" class="talent-image-img">`
+        ? `<div class="talent-image">
+             <img src="assets/YOUSSEF ES-SOUSY.png" alt="${talent.name}" class="talent-image-img">
+             <div class="talent-name-overlay">${talent.name}</div>
+           </div>`
         : talent.id === 2
-        ? `<img src="assets/Rachid Roussafi.png" alt="${talent.name}" class="talent-image-img">`
+        ? `<div class="talent-image">
+             <img src="assets/Rachid Roussafi.png" alt="${talent.name}" class="talent-image-img">
+             <div class="talent-name-overlay">${talent.name}</div>
+           </div>`
         : `<div class="talent-image">${talent.emoji}</div>`;
 
     card.innerHTML = `
