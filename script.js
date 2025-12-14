@@ -218,7 +218,7 @@ function renderBiography(id) {
             <div class="bio-header">
                 ${talent.id === 1 || talent.id === 2 || talent.id === 3 ? 
                     `<div class="bio-image">
-                        <img src="assets/${talent.id === 1 ? 'YOUSSEF ES-SOUSY.png' : talent.id === 2 ? 'Rachid Roussafi.png' : 'prof zouhair mahani.png'}" alt="${talent.name}" class="bio-image-img">
+                        <img src="assets/${talent.id === 1 ? 'YOUSSEF ES-SOUSY.png' : talent.id === 2 ? 'Rachid Roussafi.png' : 'prof zouhair mahani.png'}" alt="${talent.name}" class="bio-image-img ${talent.id === 3 ? 'bio-image-mahani' : ''}">
                     </div>` :
                     `<div class="bio-emoji">${talent.emoji}</div>`
                 }

@@ -653,6 +653,10 @@ body {
     object-position: center;
 }
 
+.bio-image-mahani {
+    object-fit: contain !important;
+}
+
 .bio-emoji {
     font-size: 6rem;
     width: 200px;
