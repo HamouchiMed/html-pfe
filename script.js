@@ -44,24 +44,6 @@ const talents = [
         description: "Entrepreneur et créateur d'emplois",
         details: "Hassan a fondé plusieurs entreprises prospères qui ont créé des centaines d'emplois locaux. Il est passionné par le développement économique de la région.",
         rating: "⭐⭐⭐⭐"
-    },
-    {
-        id: 6,
-        name: "Zaineb Zahra",
-        category: "tech",
-        emoji: "🚀",
-        description: "Ingénieure en Intelligence Artificielle",
-        details: "Zaineb travaille sur des projets d'IA innovants et développe des solutions technologiques pour les PME locales.",
-        rating: "⭐⭐⭐⭐"
-    },
-    {
-        id: 7,
-        name: "Karim Taha",
-        category: "musique",
-        emoji: "🎸",
-        description: "Musicien et compositeur",
-        details: "Karim compose de la musique originale et joue de plusieurs instruments. Il est connu pour ses collaborations avec d'autres artistes régionaux.",
-        rating: "⭐⭐⭐⭐"
     }
 ];
 
