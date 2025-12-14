@@ -47,15 +47,6 @@ const talents = [
     },
     {
         id: 6,
-        name: "Bilal Hmidou",
-        category: "sport",
-        emoji: "🏃",
-        description: "Athlète professionnel - Coureur de distance",
-        details: "Bilal a participé à plusieurs marathons internationaux et détient plusieurs records régionaux. Il entraîne les jeunes athletes de Dakhla.",
-        rating: "⭐⭐⭐⭐⭐"
-    },
-    {
-        id: 7,
         name: "Zaineb Zahra",
         category: "tech",
         emoji: "🚀",
@@ -64,7 +55,7 @@ const talents = [
         rating: "⭐⭐⭐⭐"
     },
     {
-        id: 8,
+        id: 7,
         name: "Karim Taha",
         category: "musique",
         emoji: "🎸",
