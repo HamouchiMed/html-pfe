@@ -38,7 +38,7 @@ const talents = [
     },
     {
         id: 5,
-        name: "Hassan Bennani",
+        name: "Soufiane Hamaini",
         category: "entrepreneuriat",
         emoji: "💼",
         description: "Entrepreneur et créateur d'emplois",
@@ -47,15 +47,6 @@ const talents = [
     },
     {
         id: 6,
-        name: "Mariam Al-Awad",
-        category: "art",
-        emoji: "🖼️",
-        description: "Sculptrice et artiste visuelle",
-        details: "Mariam crée des sculptures contemporaines qui reflètent l'identité culturelle de Dakhla. Ses œuvres sont exposées dans des musées prestigieux.",
-        rating: "⭐⭐⭐⭐"
-    },
-    {
-        id: 7,
         name: "Bilal Hmidou",
         category: "sport",
         emoji: "🏃",
@@ -64,7 +55,7 @@ const talents = [
         rating: "⭐⭐⭐⭐⭐"
     },
     {
-        id: 8,
+        id: 7,
         name: "Zaineb Zahra",
         category: "tech",
         emoji: "🚀",
@@ -73,7 +64,7 @@ const talents = [
         rating: "⭐⭐⭐⭐"
     },
     {
-        id: 9,
+        id: 8,
         name: "Karim Taha",
         category: "musique",
         emoji: "🎸",
@@ -188,6 +179,11 @@ function createTalentCard(talent) {
              <img src="assets/Najm Souf.png" alt="${talent.name}" class="talent-image-img">
              <div class="talent-name-overlay">${talent.name}</div>
            </div>`
+        : talent.id === 5
+        ? `<div class="talent-image">
+             <img src="assets/Soufiane Hamaini.png" alt="${talent.name}" class="talent-image-img">
+             <div class="talent-name-overlay">${talent.name}</div>
+           </div>`
         : `<div class="talent-image">${talent.emoji}</div>`;
 
     card.innerHTML = `
@@ -221,9 +217,9 @@ function renderBiography(id) {
     bioContainer.innerHTML = `
         <div class="bio-card">
             <div class="bio-header">
-                ${talent.id === 1 || talent.id === 2 || talent.id === 3 || talent.id === 4 ? 
+                ${talent.id === 1 || talent.id === 2 || talent.id === 3 || talent.id === 4 || talent.id === 5 ? 
                     `<div class="bio-image">
-                        <img src="assets/${talent.id === 1 ? 'YOUSSEF ES-SOUSY.png' : talent.id === 2 ? 'Rachid Roussafi.png' : talent.id === 3 ? 'prof zouhair mahani.png' : 'Najm Souf.png'}" alt="${talent.name}" class="bio-image-img ${talent.id === 3 ? 'bio-image-mahani' : ''}">
+                        <img src="assets/${talent.id === 1 ? 'YOUSSEF ES-SOUSY.png' : talent.id === 2 ? 'Rachid Roussafi.png' : talent.id === 3 ? 'prof zouhair mahani.png' : talent.id === 4 ? 'Najm Souf.png' : 'Soufiane Hamaini.png'}" alt="${talent.name}" class="bio-image-img ${talent.id === 3 ? 'bio-image-mahani' : ''}">
                     </div>` :
                     `<div class="bio-emoji">${talent.emoji}</div>`
                 }
