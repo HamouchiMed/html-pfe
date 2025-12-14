@@ -183,6 +183,11 @@ function createTalentCard(talent) {
              <img src="assets/prof zouhair mahani.png" alt="${talent.name}" class="talent-image-img">
              <div class="talent-name-overlay">${talent.name}</div>
            </div>`
+        : talent.id === 4
+        ? `<div class="talent-image">
+             <img src="assets/Najm Souf.png" alt="${talent.name}" class="talent-image-img">
+             <div class="talent-name-overlay">${talent.name}</div>
+           </div>`
         : `<div class="talent-image">${talent.emoji}</div>`;
 
     card.innerHTML = `
@@ -216,9 +221,9 @@ function renderBiography(id) {
     bioContainer.innerHTML = `
         <div class="bio-card">
             <div class="bio-header">
-                ${talent.id === 1 || talent.id === 2 || talent.id === 3 ? 
+                ${talent.id === 1 || talent.id === 2 || talent.id === 3 || talent.id === 4 ? 
                     `<div class="bio-image">
-                        <img src="assets/${talent.id === 1 ? 'YOUSSEF ES-SOUSY.png' : talent.id === 2 ? 'Rachid Roussafi.png' : 'prof zouhair mahani.png'}" alt="${talent.name}" class="bio-image-img ${talent.id === 3 ? 'bio-image-mahani' : ''}">
+                        <img src="assets/${talent.id === 1 ? 'YOUSSEF ES-SOUSY.png' : talent.id === 2 ? 'Rachid Roussafi.png' : talent.id === 3 ? 'prof zouhair mahani.png' : 'Najm Souf.png'}" alt="${talent.name}" class="bio-image-img ${talent.id === 3 ? 'bio-image-mahani' : ''}">
                     </div>` :
                     `<div class="bio-emoji">${talent.emoji}</div>`
                 }
