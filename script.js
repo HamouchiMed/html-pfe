@@ -29,7 +29,7 @@ const talents = [
     },
     {
         id: 4,
-        name: "Layla Osman",
+        name: "Najm Souf",
         category: "musique",
         emoji: "🎵",
         description: "Chanteuse et musicienne talentueuse",
