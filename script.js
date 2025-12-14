@@ -15,7 +15,7 @@ const talents = [
         category: "sport",
         emoji: "⚽",
         description: "Rachid Roussafi est un sportif spécialisé en kitesurf originaire de Dakhla. Il est reconnu pour son talent et sa maîtrise des conditions uniques de la lagune, et participe à la promotion des sports nautiques dans la région.",
-        details: "Fatima a remporté plusieurs tournois régionaux et joue pour l'équipe nationale. Elle encourage les jeunes filles à suivre leur passion pour le sport.",
+        details: "Rachid Roussafi a participé à plusieurs compétitions de kitesurf et est reconnu pour son talent dans ce sport. Il contribue à la promotion du kitesurf à Dakhla et encourage les jeunes à suivre leur passion pour les sports nautiques.",
         rating: "⭐⭐⭐⭐⭐"
     },
     {
@@ -24,7 +24,7 @@ const talents = [
         category: "tech",
         emoji: "💻",
         description: "Développeur web et entrepreneur technologique",
-        details: "Mohamed a créé plusieurs applications mobiles réussies et dirige une startup locale. Il travaille sur l'innovation technologique pour la région.",
+        details: "Le Professeur Zouhair Mahani est un éducateur et chercheur reconnu, apprécié pour son engagement envers l'enseignement et le développement académique. Il inspire ses étudiants par sa passion pour le savoir et encourage toujours l'excellence et la curiosité intellectuelle.",
         rating: "⭐⭐⭐⭐"
     },
     {
