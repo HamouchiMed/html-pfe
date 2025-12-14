@@ -20,7 +20,7 @@ const talents = [
     },
     {
         id: 3,
-        name: "Mohamed Hajj",
+        name: "Prof ZOUHAIR MAHANI",
         category: "tech",
         emoji: "💻",
         description: "Développeur web et entrepreneur technologique",
@@ -176,6 +176,11 @@ function createTalentCard(talent) {
         : talent.id === 2
         ? `<div class="talent-image">
              <img src="assets/Rachid Roussafi.png" alt="${talent.name}" class="talent-image-img">
+             <div class="talent-name-overlay">${talent.name}</div>
+           </div>`
+        : talent.id === 3
+        ? `<div class="talent-image">
+             <img src="assets/prof zouhair mahani.png" alt="${talent.name}" class="talent-image-img">
              <div class="talent-name-overlay">${talent.name}</div>
            </div>`
         : `<div class="talent-image">${talent.emoji}</div>`;
