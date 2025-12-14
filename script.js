@@ -216,7 +216,12 @@ function renderBiography(id) {
     bioContainer.innerHTML = `
         <div class="bio-card">
             <div class="bio-header">
-                <div class="bio-emoji">${talent.emoji}</div>
+                ${talent.id === 1 || talent.id === 2 || talent.id === 3 ? 
+                    `<div class="bio-image">
+                        <img src="assets/${talent.id === 1 ? 'YOUSSEF ES-SOUSY.png' : talent.id === 2 ? 'Rachid Roussafi.png' : 'prof zouhair mahani.png'}" alt="${talent.name}" class="bio-image-img">
+                    </div>` :
+                    `<div class="bio-emoji">${talent.emoji}</div>`
+                }
                 <div class="bio-basic">
                     <h1>${talent.name}</h1>
                     <p class="bio-category">${getCategoryLabel(talent.category)}</p>
