@@ -7,7 +7,13 @@ const talents = [
         emoji: "🎨",
         description: "Youssef Es-Sousy est un artiste originaire de Dakhla, connu pour sa créativité et son engagement artistique. À travers son art, il met en valeur la culture locale et l'identité du Sud marocain.",
         details: "YOUSSEF crée des œuvres magnifiques inspirées par la culture locale de Dakhla. Il travaille avec diverses techniques et expose ses créations aux galeries internationales.",
-        rating: "⭐⭐⭐⭐⭐"
+        rating: "⭐⭐⭐⭐⭐",
+        socialMedia: {
+            facebook: "https://facebook.com/youssef-es-sousy",
+            instagram: "https://instagram.com/youssef_es_sousy",
+            twitter: "https://twitter.com/youssef_es_sousy",
+            linkedin: "https://linkedin.com/in/youssef-es-sousy"
+        }
     },
     {
         id: 2,
@@ -16,7 +22,13 @@ const talents = [
         emoji: "⚽",
         description: "Rachid Roussafi est un sportif spécialisé en kitesurf originaire de Dakhla. Il est reconnu pour son talent et sa maîtrise des conditions uniques de la lagune, et participe à la promotion des sports nautiques dans la région.",
         details: "Rachid Roussafi a participé à plusieurs compétitions de kitesurf et est reconnu pour son talent dans ce sport. Il contribue à la promotion du kitesurf à Dakhla et encourage les jeunes à suivre leur passion pour les sports nautiques.",
-        rating: "⭐⭐⭐⭐⭐"
+        rating: "⭐⭐⭐⭐⭐",
+        socialMedia: {
+            facebook: "https://facebook.com/rachid-roussafi",
+            instagram: "https://instagram.com/rachid_roussafi",
+            twitter: "https://twitter.com/rachid_roussafi",
+            linkedin: "https://linkedin.com/in/rachid-roussafi"
+        }
     },
     {
         id: 3,
@@ -25,7 +37,13 @@ const talents = [
         emoji: "💻",
         description: "Le Professeur Zouhair Mahani est spécialisé en [ informatique, gestion, sciences, etc.]. Il est reconnu pour son expertise académique, son engagement dans l'enseignement et sa contribution au développement des compétences de ses étudiants.",
         details: "Le Professeur Zouhair Mahani est un éducateur et chercheur reconnu, apprécié pour son engagement envers l'enseignement et le développement académique. Il inspire ses étudiants par sa passion pour le savoir et encourage toujours l'excellence et la curiosité intellectuelle.",
-        rating: "⭐⭐⭐⭐"
+        rating: "⭐⭐⭐⭐",
+        socialMedia: {
+            facebook: "https://facebook.com/prof-zouhair-mahani",
+            instagram: "https://instagram.com/prof_zouhair_mahani",
+            twitter: "https://twitter.com/prof_zouhair_mahani",
+            linkedin: "https://linkedin.com/in/prof-zouhair-mahani"
+        }
     },
     {
         id: 4,
@@ -34,7 +52,13 @@ const talents = [
         emoji: "🎵",
         description: "Chanteuse et musicienne talentueuse",
         details: "Layla fusionne la musique traditionnelle avec les sons modernes. Ses performances ont été applaudies lors de festivals internationaux.",
-        rating: "⭐⭐⭐⭐⭐"
+        rating: "⭐⭐⭐⭐⭐",
+        socialMedia: {
+            facebook: "https://facebook.com/najm-souf",
+            instagram: "https://instagram.com/najm_souf",
+            twitter: "https://twitter.com/najm_souf",
+            linkedin: "https://linkedin.com/in/najm-souf"
+        }
     },
     {
         id: 5,
@@ -43,11 +67,17 @@ const talents = [
         emoji: "💼",
         description: "Entrepreneur et créateur d'emplois",
         details: "Hassan a fondé plusieurs entreprises prospères qui ont créé des centaines d'emplois locaux. Il est passionné par le développement économique de la région.",
-        rating: "⭐⭐⭐⭐"
+        rating: "⭐⭐⭐⭐",
+        socialMedia: {
+            facebook: "https://facebook.com/soufiane-hamaini",
+            instagram: "https://instagram.com/soufiane_hamaini",
+            twitter: "https://twitter.com/soufiane_hamaini",
+            linkedin: "https://linkedin.com/in/soufiane-hamaini"
+        }
     }
 ];
 
-let currentFilter = "tous";
+let currentFilter = "";
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
@@ -58,6 +88,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     setupFilterButtons();
     setupContactForm();
+    setupPlacesScroller();
+    setupPlaceCards();
 });
 
 // Initialize theme from localStorage or system preference
@@ -76,22 +108,9 @@ function setTheme(theme) {
     if (theme === 'dark') {
         root.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark');
-        updateThemeIcon('☀️');
     } else {
         root.removeAttribute('data-theme');
         localStorage.setItem('theme', 'light');
-        updateThemeIcon('🌙');
-    }
-}
-
-// Update theme toggle button icon
-function updateThemeIcon(icon) {
-    const themeToggle = document.getElementById('themeToggle');
-    if (themeToggle) {
-        const iconSpan = themeToggle.querySelector('.theme-icon');
-        if (iconSpan) {
-            iconSpan.textContent = icon;
-        }
     }
 }
 
@@ -119,7 +138,11 @@ function displayTalents(talentsToDisplay) {
 
     talentsToDisplay.forEach(talent => {
         const talentCard = createTalentCard(talent);
-        talentsGrid.appendChild(talentCard);
+        // wrap card in grid item to match template grid
+        const gridItem = document.createElement('div');
+        gridItem.className = 'grid-item';
+        gridItem.appendChild(talentCard);
+        talentsGrid.appendChild(gridItem);
     });
 }
 
@@ -209,7 +232,15 @@ function renderBiography(id) {
                 <p>${talent.description}</p>
             </div>
             <div style="margin-top:20px;">
-                <a class="btn btn-primary" href="mailto:example@example.com?subject=Contact%20${encodeURIComponent(talent.name)}">Contacter ${talent.name}</a>
+                ${talent.socialMedia ? `
+                    <div class="social-media-buttons">
+                        ${Object.entries(talent.socialMedia).map(([platform, url]) => 
+                            `<button onclick="window.open('${url}', '_blank')" class="social-btn ${platform}">${platform.charAt(0).toUpperCase() + platform.slice(1)}</button>`
+                        ).join('')}
+                    </div>
+                ` : `
+                    <a class="btn btn-primary" href="mailto:example@example.com?subject=Contact%20${encodeURIComponent(talent.name)}">Contacter ${talent.name}</a>
+                `}
             </div>
         </div>
     `;
@@ -270,12 +301,8 @@ function setupFilterButtons() {
             
             currentFilter = filter;
             
-            if (filter === 'tous') {
-                displayTalents(talents);
-            } else {
-                const filtered = talents.filter(t => t.category === filter);
-                displayTalents(filtered);
-            }
+            const filtered = talents.filter(t => t.category === filter);
+            displayTalents(filtered);
         });
     });
 }
@@ -332,10 +359,258 @@ function setupContactForm() {
     }
 }
 
-// Close modal when clicking outside
-window.onclick = function(event) {
-    const modal = document.getElementById('talentModal');
-    if (event.target === modal) {
-        modal.style.display = 'none';
+// Setup places scroller
+function setupPlacesScroller() {
+    const scrollLeft = document.getElementById('scrollLeft');
+    const scrollRight = document.getElementById('scrollRight');
+    const placesContainer = document.getElementById('placesContainer');
+
+    if (scrollLeft && scrollRight && placesContainer) {
+        scrollLeft.addEventListener('click', () => {
+            placesContainer.scrollBy({
+                left: -320,
+                behavior: 'smooth'
+            });
+        });
+
+        scrollRight.addEventListener('click', () => {
+            placesContainer.scrollBy({
+                left: 320,
+                behavior: 'smooth'
+            });
+        });
     }
 }
+
+// Setup place cards click handlers
+function setupPlaceCards() {
+    const placeCards = document.querySelectorAll('.place-card');
+    
+    placeCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const name = card.dataset.name;
+            const description = card.dataset.description;
+            const category = card.dataset.category;
+            const lat = card.dataset.lat;
+            const lng = card.dataset.lng;
+            const address = card.dataset.address;
+            
+            openPlaceModal(name, description, category, lat, lng, address);
+        });
+    });
+}
+
+// Open place modal
+function openPlaceModal(name, description, category, lat, lng, address) {
+    const modal = document.getElementById('placeModal');
+    const modalBody = document.getElementById('placeModalBody');
+    
+    // Generate activities based on category
+    const activities = getActivitiesForCategory(category);
+    
+    modalBody.innerHTML = `
+        <div class="place-modal-header">
+            <h2>${name}</h2>
+            <span class="place-category">${category}</span>
+        </div>
+        <div class="place-modal-body">
+            <div class="place-map-container">
+                <iframe 
+                    src="https://maps.google.com/maps?q=${lat},${lng}&z=15&output=embed"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="place-details">
+                <div class="place-description">
+                    ${description}
+                </div>
+                <div class="place-address">
+                    <h4>📍 Adresse</h4>
+                    <p>${address}</p>
+                </div>
+                <div class="place-activities">
+                    <h4>🎯 Activités Disponibles</h4>
+                    <ul>
+                        ${activities.map(activity => `<li>${activity}</li>`).join('')}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="place-modal-footer">
+            <button class="btn btn-primary" onclick="getDirections(${lat}, ${lng})">Obtenir l'Itinéraire</button>
+            <button class="btn btn-secondary" onclick="closePlaceModal()">Fermer</button>
+        </div>
+    `;
+    
+    modal.style.display = 'block';
+}
+
+// Get activities based on category
+function getActivitiesForCategory(category) {
+    const activitiesMap = {
+        'Sport • Art': ['Kitesurf', 'Plongée', 'Photographie de paysage', 'Peinture en plein air', 'Randonnée'],
+        'Art • Musique': ['Expositions d\'art', 'Concerts', 'Ateliers de peinture', 'Cours de musique', 'Théâtre'],
+        'Technologie': ['Coworking', 'Hackathons', 'Conférences tech', 'Formation numérique', 'Innovation'],
+        'Musique • Entrepreneuriat': ['Spectacles musicaux', 'Networking', 'Événements culturels', 'Concerts', 'Ateliers entrepreneuriaux'],
+        'Entrepreneuriat': ['Networking', 'Conférences', 'Mentorat', 'Incubation de startups', 'Événements d\'affaires']
+    };
+    
+    // Handle multiple categories
+    const categories = category.split(' • ');
+    let activities = [];
+    
+    categories.forEach(cat => {
+        if (activitiesMap[cat]) {
+            activities = activities.concat(activitiesMap[cat]);
+        }
+    });
+    
+    // Remove duplicates and limit to 5
+    return [...new Set(activities)].slice(0, 5);
+}
+
+// Get directions
+function getDirections(lat, lng) {
+    const url = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+    window.open(url, '_blank');
+}
+
+// Close place modal
+function closePlaceModal() {
+    const modal = document.getElementById('placeModal');
+    modal.style.display = 'none';
+}
+
+// Close modals when clicking outside
+window.addEventListener('click', function(event) {
+    const talentModal = document.getElementById('talentModal');
+    const placeModal = document.getElementById('placeModal');
+    
+    if (event.target === talentModal) {
+        closeTalentModal();
+    }
+    if (event.target === placeModal) {
+        closePlaceModal();
+    }
+});
+
+// Drawer functionality
+function initDrawer() {
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const drawer = document.getElementById('drawer');
+    const drawerOverlay = document.getElementById('drawerOverlay');
+    const drawerClose = document.getElementById('drawerClose');
+
+    if (hamburgerMenu && drawer && drawerOverlay) {
+        // Toggle drawer
+        hamburgerMenu.addEventListener('click', function() {
+            toggleDrawer();
+        });
+
+        // Close drawer when clicking overlay
+        drawerOverlay.addEventListener('click', function() {
+            closeDrawer();
+        });
+
+        // Close drawer when clicking close button
+        if (drawerClose) {
+            drawerClose.addEventListener('click', function() {
+                closeDrawer();
+            });
+        }
+
+        // Close drawer on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeDrawer();
+            }
+        });
+    }
+}
+
+function toggleDrawer() {
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const drawer = document.getElementById('drawer');
+    const drawerOverlay = document.getElementById('drawerOverlay');
+
+    if (hamburgerMenu && drawer && drawerOverlay) {
+        hamburgerMenu.classList.toggle('active');
+        drawer.classList.toggle('active');
+        drawerOverlay.classList.toggle('active');
+        
+        // Prevent body scroll when drawer is open
+        document.body.style.overflow = drawer.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function closeDrawer() {
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const drawer = document.getElementById('drawer');
+    const drawerOverlay = document.getElementById('drawerOverlay');
+
+    if (hamburgerMenu && drawer && drawerOverlay) {
+        hamburgerMenu.classList.remove('active');
+        drawer.classList.remove('active');
+        drawerOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// Initialize drawer when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initDrawer();
+});
+
+// Explore Section Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const exploreCards = document.querySelectorAll('.explore-card');
+    let currentActiveIndex = 1; // Start with the middle card active
+
+    function updateCardPositions() {
+        exploreCards.forEach((card, index) => {
+            card.classList.remove('active');
+            
+            const distance = index - currentActiveIndex;
+            
+            if (distance === 0) {
+                card.classList.add('active');
+                card.style.transform = 'scale(1) translateX(0px)';
+                card.style.zIndex = '10';
+                card.style.opacity = '1';
+            } else {
+                const scale = Math.max(0.5, 1 - Math.abs(distance) * 0.2);
+                const translateX = distance * 200;
+                const zIndex = Math.max(1, 10 - Math.abs(distance) * 2);
+                const opacity = Math.max(0.3, 1 - Math.abs(distance) * 0.3);
+                
+                card.style.transform = `scale(${scale}) translateX(${translateX}px)`;
+                card.style.zIndex = zIndex;
+                card.style.opacity = opacity;
+            }
+        });
+    }
+
+    // Initialize positions
+    updateCardPositions();
+
+    // Add hover effects
+    exploreCards.forEach((card, index) => {
+        card.addEventListener('mouseenter', function() {
+            if (index !== currentActiveIndex) {
+                currentActiveIndex = index;
+                updateCardPositions();
+            }
+        });
+        
+        card.addEventListener('click', function() {
+            currentActiveIndex = index;
+            updateCardPositions();
+        });
+    });
+
+    // Auto-rotate every 5 seconds
+    setInterval(() => {
+        currentActiveIndex = (currentActiveIndex + 1) % exploreCards.length;
+        updateCardPositions();
+    }, 5000);
+});

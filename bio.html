@@ -7,26 +7,53 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
                 <h1>Talent Dakhla</h1>
-            </div>
-            <div class="nav-right">
-                <ul class="nav-menu">
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="art-page.html">Art</a></li>
-                    <li><a href="sport-page.html">Sport</a></li>
-                    <li><a href="tech-page.html">Tech</a></li>
-                    <li><a href="music-page.html">Musique</a></li>
-                    <li><a href="entrepreneurship-page.html">Entrepreneuriat</a></li>
-                </ul>
-                <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">
-                    <span class="theme-icon">🌙</span>
+                <button class="hamburger-menu" id="hamburgerMenu" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
                 </button>
             </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html#talents">Talents</a></li>
+                <li><a href="index.html#places">Lieux</a></li>
+                <li><a href="index.html#categories">Catégories</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">
+                <div class="toggle-switch"><div class="toggle-slider"></div></div>
+            </button>
         </div>
     </nav>
+
+    <!-- Drawer/Sidebar -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <div class="drawer" id="drawer">
+        <div class="drawer-header">
+            <h2>Talent Dakhla</h2>
+            <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+                <span class="close-line"></span>
+                <span class="close-line"></span>
+            </button>
+        </div>
+        <ul class="drawer-menu">
+            <li><a href="index.html" onclick="closeDrawer()">Accueil</a></li>
+            <li><a href="art-page.html" onclick="closeDrawer()">Art</a></li>
+            <li><a href="sport-page.html" onclick="closeDrawer()">Sport</a></li>
+            <li><a href="tech-page.html" onclick="closeDrawer()">Tech</a></li>
+            <li><a href="music-page.html" onclick="closeDrawer()">Musique</a></li>
+            <li><a href="entrepreneurship-page.html" onclick="closeDrawer()">Entrepreneuriat</a></li>
+        </ul>
+        <div class="drawer-footer">
+            <p>Célébrer les talents locaux de Dakhla</p>
+        </div>
+    </div>
 
     <main class="container" style="padding: 40px 20px;">
         <div id="bioContainer"></div>

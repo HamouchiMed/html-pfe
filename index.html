@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Talent Dakhla - Présenter les Talents Locaux</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,20 +15,109 @@
         <div class="container">
             <div class="nav-brand">
                 <h1>Talent Dakhla</h1>
-            </div>
-            <div class="nav-right">
-                <ul class="nav-menu">
-                    <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#talents">Talents</a></li>
-                    <li><a href="#categories">Catégories</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">
-                    <span class="theme-icon">🌙</span>
+                <button class="hamburger-menu" id="hamburgerMenu" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
                 </button>
             </div>
+            <ul class="nav-menu">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#talents">Talents</a></li>
+                <li><a href="#categories">Catégories</a></li>
+                <li><a href="#places">Lieux</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">
+                <div class="toggle-switch"><div class="toggle-slider"></div></div>
+            </button>
         </div>
     </nav>
+
+    <!-- Drawer/Sidebar -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <div class="drawer" id="drawer">
+        <div class="drawer-header">
+            <h2>Talent Dakhla</h2>
+            <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+                <span class="close-line"></span>
+                <span class="close-line"></span>
+            </button>
+        </div>
+        <ul class="drawer-menu">
+            <li><a href="#accueil" onclick="closeDrawer()">Accueil</a></li>
+            <li><a href="#talents" onclick="closeDrawer()">Talents</a></li>
+            <li><a href="#places" onclick="closeDrawer()">Lieux</a></li>
+            <li><a href="#categories" onclick="closeDrawer()">Catégories</a></li>
+            <li><a href="#contact" onclick="closeDrawer()">Contact</a></li>
+        </ul>
+        <div class="drawer-footer">
+            <p>Célébrer les talents locaux de Dakhla</p>
+        </div>
+    </div>
+
+    <!-- Explore Section -->
+    <section class="explore-section">
+        <div class="explore-container">
+            <div class="explore-header">
+                <h2 class="explore-title">Explore...</h2>
+                <h3 class="explore-subtitle">Dakhla famous talents</h3>
+            </div>
+            <div class="explore-stack">
+                <div class="explore-card" data-index="0">
+                    <a href="bio.html?id=1">
+                        <div class="card-image" style="background-image: url('assets/YOUSSEF ES-SOUSY.png')"></div>
+                        <div class="card-name">
+                            <div class="card-name-text">YOUSSEF ES-SOUSY</div>
+                            <div class="card-category">Art</div>
+                        </div>
+                    </a>
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="explore-card active" data-index="1">
+                    <a href="bio.html?id=4">
+                        <div class="card-image" style="background-image: url('assets/Najm Souf.png')"></div>
+                        <div class="card-name">
+                            <div class="card-name-text">Najm Souf</div>
+                            <div class="card-category">Musique</div>
+                        </div>
+                    </a>
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="explore-card" data-index="2">
+                    <a href="bio.html?id=2">
+                        <div class="card-image" style="background-image: url('assets/Rachid Roussafi.png')"></div>
+                        <div class="card-name">
+                            <div class="card-name-text">Rachid Roussafi</div>
+                            <div class="card-category">Sport</div>
+                        </div>
+                    </a>
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="explore-card" data-index="3">
+                    <a href="bio.html?id=3">
+                        <div class="card-image" style="background-image: url('assets/prof zouhair mahani.png')"></div>
+                        <div class="card-name">
+                            <div class="card-name-text">Prof. Zouhair Mahani</div>
+                            <div class="card-category">Technologie</div>
+                        </div>
+                    </a>
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="explore-card" data-index="4">
+                    <a href="bio.html?id=5">
+                        <div class="card-image" style="background-image: url('assets/Soufiane Hamaini.png')"></div>
+                        <div class="card-name">
+                            <div class="card-name-text">Soufiane Hamaini</div>
+                            <div class="card-category">Entrepreneuriat</div>
+                        </div>
+                    </a>
+                    <div class="card-overlay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Hero Section -->
     <section id="accueil" class="hero">
@@ -44,7 +136,6 @@
         <div class="container">
             <h2>Filtrer par Catégorie</h2>
             <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="tous">Tous</button>
                 <button class="filter-btn" data-filter="art">🎨 Art</button>
                 <button class="filter-btn" data-filter="sport">⚽ Sport</button>
                 <button class="filter-btn" data-filter="tech">💻 Technologie</button>
@@ -55,11 +146,110 @@
     </section>
 
     <!-- Talents Gallery -->
-    <section id="talents" class="talents-section">
+    <section id="talents" class="talents-section section-wrapper">
+        <div class="container section-item">
+            <div class="section-header">
+                <h2 class="section-title">Nos Talents</h2>
+            </div>
+            <div class="section-content">
+                <div class="grid-wrapper" id="talentsGrid">
+                    <!-- Cards will be injected here by JavaScript -->
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Places to Visit Section -->
+    <section id="places" class="places-section">
         <div class="container">
-            <h2>Nos Talents</h2>
-            <div class="talents-grid" id="talentsGrid">
-                <!-- Talent cards will be generated by JavaScript -->
+            <h2>Lieux à Visiter</h2>
+            <p class="places-subtitle">Découvrez les endroits parfaits pour pratiquer vos passions et admirer l'art à Dakhla</p>
+            <div class="places-scroller">
+                <button class="scroll-btn scroll-left" id="scrollLeft">‹</button>
+                <div class="places-container" id="placesContainer">
+                    <div class="place-card" data-name="Plages de Dakhla" data-description="Idéales pour les activités sportives aquatiques et la détente artistique" data-category="Sport • Art" data-lat="23.6848" data-lng="-15.9570" data-address="Plages de Dakhla, Dakhla, Maroc">
+                        <div class="place-image">
+                            <span class="place-emoji">🏖️</span>
+                        </div>
+                        <div class="place-info">
+                            <h3>Plages de Dakhla</h3>
+                            <p>Idéales pour les activités sportives aquatiques et la détente artistique</p>
+                            <span class="place-category">Sport • Art</span>
+                        </div>
+                    </div>
+                    <div class="place-card" data-name="Centre Culturel" data-description="Espace dédié aux expositions artistiques et aux performances musicales" data-category="Art • Musique" data-lat="23.6848" data-lng="-15.9570" data-address="Centre Culturel, Dakhla, Maroc">
+                        <div class="place-image">
+                            <span class="place-emoji">🏛️</span>
+                        </div>
+                        <div class="place-info">
+                            <h3>Centre Culturel</h3>
+                            <p>Espace dédié aux expositions artistiques et aux performances musicales</p>
+                            <span class="place-category">Art • Musique</span>
+                        </div>
+                    </div>
+                    <div class="place-card" data-name="Montagnes de Dakhla" data-description="Parfait pour l'escalade, le trekking et l'inspiration artistique en plein air" data-category="Sport • Art" data-lat="23.6848" data-lng="-15.9570" data-address="Montagnes de Dakhla, Dakhla, Maroc">
+                        <div class="place-image">
+                            <span class="place-emoji">🏔️</span>
+                        </div>
+                        <div class="place-info">
+                            <h3>Montagnes de Dakhla</h3>
+                            <p>Parfait pour l'escalade, le trekking et l'inspiration artistique en plein air</p>
+                            <span class="place-category">Sport • Art</span>
+                        </div>
+                    </div>
+                    <div class="place-card" data-name="Tech Hub Dakhla" data-description="Centre d'innovation technologique avec espaces de coworking" data-category="Technologie" data-lat="23.6848" data-lng="-15.9570" data-address="Tech Hub, Dakhla, Maroc">
+                        <div class="place-image">
+                            <span class="place-emoji">💻</span>
+                        </div>
+                        <div class="place-info">
+                            <h3>Tech Hub Dakhla</h3>
+                            <p>Centre d'innovation technologique avec espaces de coworking</p>
+                            <span class="place-category">Technologie</span>
+                        </div>
+                    </div>
+                    <div class="place-card" data-name="Théâtre Municipal" data-description="Lieu de spectacles musicaux et d'événements entrepreneuriaux" data-category="Musique • Entrepreneuriat" data-lat="23.6848" data-lng="-15.9570" data-address="Théâtre Municipal, Dakhla, Maroc">
+                        <div class="place-image">
+                            <span class="place-emoji">🎭</span>
+                        </div>
+                        <div class="place-info">
+                            <h3>Théâtre Municipal</h3>
+                            <p>Lieu de spectacles musicaux et d'événements entrepreneuriaux</p>
+                            <span class="place-category">Musique • Entrepreneuriat</span>
+                        </div>
+                    </div>
+                    <div class="place-card" data-name="Désert de Dakhla" data-description="Expériences uniques pour l'aventure sportive et l'art photographique" data-category="Sport • Art" data-lat="23.6848" data-lng="-15.9570" data-address="Désert de Dakhla, Dakhla, Maroc">
+                        <div class="place-image">
+                            <span class="place-emoji">🌅</span>
+                        </div>
+                        <div class="place-info">
+                            <h3>Désert de Dakhla</h3>
+                            <p>Expériences uniques pour l'aventure sportive et l'art photographique</p>
+                            <span class="place-category">Sport • Art</span>
+                        </div>
+                    </div>
+                    <div class="place-card" data-name="Business Center" data-description="Espace de networking et d'entrepreneuriat innovant" data-category="Entrepreneuriat" data-lat="23.6848" data-lng="-15.9570" data-address="Business Center, Dakhla, Maroc">
+                        <div class="place-image">
+                            <span class="place-emoji">🏢</span>
+                        </div>
+                        <div class="place-info">
+                            <h3>Business Center</h3>
+                            <p>Espace de networking et d'entrepreneuriat innovant</p>
+                            <span class="place-category">Entrepreneuriat</span>
+                        </div>
+                    </div>
+                    <div class="place-card" data-name="Galerie d'Art" data-description="Expositions permanentes et temporaires d'artistes locaux" data-category="Art" data-lat="23.6848" data-lng="-15.9570" data-address="Galerie d'Art, Dakhla, Maroc">
+                        <div class="place-image">
+                            <span class="place-emoji">🎨</span>
+                        </div>
+                        <div class="place-info">
+                            <h3>Galerie d'Art</h3>
+                            <p>Expositions permanentes et temporaires d'artistes locaux</p>
+                            <span class="place-category">Art</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="scroll-btn scroll-right" id="scrollRight">›</button>
             </div>
         </div>
     </section>
@@ -99,6 +289,16 @@
             <span class="close" onclick="closeTalentModal()">&times;</span>
             <div id="modalBody">
                 <!-- Talent details will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Place Details -->
+    <div class="modal" id="placeModal">
+        <div class="modal-content place-modal-content">
+            <span class="close" onclick="closePlaceModal()">&times;</span>
+            <div id="placeModalBody">
+                <!-- Place details will be populated here -->
             </div>
         </div>
     </div>
