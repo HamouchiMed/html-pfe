@@ -820,6 +820,17 @@ body {
     background: rgba(0, 0, 0, 0.1);
 }
 
+/* Ensure place images show whole photo without cropping */
+.place-image-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transform: scale(1.05);
+    transition: transform 0.4s ease;
+}
+
 .place-info {
     padding: 25px;
 }

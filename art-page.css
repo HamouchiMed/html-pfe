@@ -24,7 +24,7 @@
 /* Art Page Specific Styles */
 
 .art-hero {
-    background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 50%, #FFE66D 100%);
+    background: url('assets/Maison de l\'industrie traditionnelle.png') no-repeat center center;
     color: white;
     padding: 80px 20px;
     text-align: center;

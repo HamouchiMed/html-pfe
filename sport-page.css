@@ -24,7 +24,7 @@
 /* Sport Page Specific Styles */
 
 .sport-hero {
-    background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 50%, #45B7D1 100%);
+    background: url('assets/terrain dakhla.png') no-repeat center center / cover;
     color: white;
     padding: 80px 20px;
     text-align: center;
